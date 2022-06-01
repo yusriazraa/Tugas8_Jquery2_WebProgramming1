@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title> FORM DATA MAHASISWA</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+		var nomor=0;
+		
+		$("#formkelamin").hide();
+			$("#btn2").click(function(){
+				var npm,nama,jeniskel;
+				npm=$("#npm").val();
+				nama=$("#nama").val();
+				jeniskel=$("#jeniskel").val();
+				nomor++;
+				$("#listdata").append("<tr><td>"+nomor+"</td><td>"+npm+"</td><td>"+nama+"</td><td>"+jeniskel+"</td></tr>");
+				
+				alert("Data berhasil disimpan");
+			});
+			
+			$("#btnhilang").click(function(){
+				$("#formdata").toggle();
+			});
+			
+			$("#btnkelamin").click(function(){
+				$("#formdata").hide();
+				$("#formkelamin").show();
+			});
+			$("#btn5").click(function(){
+				$("#formdata").show();
+				$("#formkelamin").hide();
+			});
+			$("#btn6").click(function(){
+				
+				
+				$("#formdata").hide();
+				window.print();
+			});
+			$("#btn4").click(function(){
+			var inputkelamin;
+			inputkelamin=$("#inputkelamin").val();
+				$("#formdata").show();
+				$("#formkelamin").hide();
+				$("#jeniskel").append("<option value='"+inputkelamin+"'>"+inputkelamin+"</option>");
+				
+			});
+		});
+	</script>
+</head>
+<body>
+ <h2 align="center">FORM DATA MAHASISWA</h2>
+	<table id="formdata" align="center" width="700px">
+		<tr>
+			<td >NPM</td>
+			<td><input type="text" id="npm"/></td>
+		</tr>
+		<tr>
+			<td>Nama Lengkap</td>
+			<td><input type="text" id="nama"/></td>
+		</tr>
+		<tr>
+			<td>Jenis Kelamin</td>
+			<td>
+				<select id="jeniskel">
+					<option value="">-- Pilih Data --</option>
+					<option value="Laki-laki">Laki-laki</option>
+					
+				</select>
+				<button id="btnkelamin">+</button>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<button id="btn1">Baru</button>
+				<button id="btn2">Simpan</button>
+				<button id="btn3">Kosongkan Data</button>
+				<button id="btn6">Print</button>
+			</td>
+		</tr>
+	</table>
+	<br><br><br>
+	<table id="formkelamin" align="center" width="700px">
+		<tr>
+			<td >Tambah Jenis Kelamin</td>
+			<td><input type="text" id="inputkelamin"/></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td>
+				<button id="btn4">Simpan</button>
+				<button id="btn5">Kembali</button>
+			</td>
+		</tr>
+	</table>
+	<table id="listdata" align="center" width="700px" cellspacing="0px" cellpadding="0px" border="1px">
+		<tr>
+			<th>NO</th>
+			<th id="btnhilang">NPM</th>
+			<th>Nama Lengkap</th>
+			<th>Jenis Kelamin</th>
+		</tr>
+
+	
+	</table>
+</body>
+</html>

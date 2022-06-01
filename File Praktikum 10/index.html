@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title> BELAJAR JQUERY PART 2</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+            $("#btn1").click(function(){
+			  $("h3").html("Ini Fungsi HTML");
+			  alert("Judul berhasil diubah");
+			});
+			
+			$("#btn2").click(function(){
+			  $("h3").append(" Ini Fungsi Append");
+			  alert("Judul berhasil ditambahkan diakhir konten");
+			});
+			
+			$("#btn3").click(function(){
+			  $("h3").prepend("Ini Fungsi Prepend ");
+			  alert("Judul berhasil ditambahkan diawal konten");
+			});
+			
+			$("#btn4").click(function(){
+			  $("h3").after("Ini Fungsi After ");
+			  alert("Judul berhasil ditambahkan diawal diluar konten");
+			});
+			
+			$("#btn5").click(function(){
+			  $("h3").before("Ini Fungsi Before ");
+			  alert("Judul berhasil ditambahkan diawal diluar konten");
+			});
+		});
+	</script>
+</head>
+<body>
+ <h2 align="center">BELAJAR JQUERY PART 2</h2>
+ <h3 style="border:1px solid black">Ini Judul Awal</h3>
+ <button id="btn1">Ini Fungsi HTML</button>
+ <button id="btn2">Ini Fungsi Append</button>
+ <button id="btn3">Ini Fungsi Prepend</button>
+ <button id="btn4">Ini Fungsi After</button>
+ <button id="btn5">Ini Fungsi Befor</button>
+</body>
+</html>
