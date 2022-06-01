@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Belajar Form HTML</title>
+</head>
+<body>
+    <!-- Nama   : Yusri Azra Lazwardi -->
+    <!-- NPM    : 432007006200083 -->
+    <!-- Kelas  : 2B -->
+    <h2 align="center">Form Input Kartu Tanda Penduduk Republik Indonesia (KTP) </h2>
+   <Form method="POST" action="aksi.php">
+        <table width="40%" align="center" border="1px" cellspacing="none" cellpadding="5px">
+            <tr>
+                <td width="15%">Nik</td>
+                <td width="40%">:
+                    <input type="number" name="Nik" placeholder="Masukan Nik anda" autofocus required>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Nama Lengkap</td>
+                <td width="40%">:
+                    <input type="text" name="nama" placeholder="Masukan Nama Lengkap" required>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Tempat Lahir</td>
+                <td width="40%">:
+                    <input type="text" name="tempatlahir" placeholder="Masukan Kota Kelahiran">
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Tanggal Lahir</td>
+                <td width="40%">:
+                    <input type="date" name="tanggallahir" required>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Jenis Kelamin</td>
+                <td width="40%">: 
+                    Laki-Laki <input type="radio" name="jenis_kelamin" value="Laki-Laki">
+                    Perempuan <input type="radio" name="jenis_kelamin" value="Perempuan">
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Golongan darah</td>
+                <td width="40%">:
+                    <select name="goldar" required>
+                        <option value=" ">-- Pilih Golongan darah anda --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="AB">AB</option>
+                        <option value="O">O</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Alamat</td>
+                <td width="40%">:
+                    <textarea name="alamat" placeholder="Masukan alamat lengkap anda"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Agama</td>
+                <td width="40%">:
+                    <select name="goldar" required>
+                        <option value=" ">-- Pilih Agama anda --</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Prostestan">Protestan</option>
+                        <option value="Budha">Budha</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Konghuchu">Konghuchu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Status Perkawinan</td>
+                <td width="40%">: 
+                    Kawin <input type="radio" name="perkawinan" value="kawin">
+                    Belum Kawin <input type="radio" name="perkawinan" value="belum kawin">
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">Kewarganegaraan</td>
+                <td width="40%">: 
+                    WNI <input type="radio" name="Kewarganegaraan" value="WNI">
+                    WNA <input type="radio" name="Kewarganegaraan" value="WNA">
+                </td>
+            </tr>
+            <tr>
+               <td colspan="2" align="center"> 
+                   <input type="reset" name="reset" value="Reset">
+                   <input type="submit" name="simpan" value="Simpan">
+                </td>
+            </tr>
+            <td colspan="5" heigt="50%" bgcolor="skyblue" align="center">
+                <p><b>®2022 - Yusri Azra Lazwardi | Membuat Form Input HTML</b><br></p>
+                <p>Di buat untuk memenuhi tugas ke - 3 Mata Kuliah Web Programming 1 <br>
+                    Dengan Full HTML (Sesuai Dengan Ketentuan Tugas)</p>
+                
+            </td>
+        </table>
+   </Form>
+</body>
+</html>
