@@ -1,117 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <title>Jquerry 2</title>
-
+    <title>Jquery table</title>
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var nomor=0;
+
+        $("#form").hide();
+            $("#simpan").click(function(){
+                var NIK,namalengkap,tempatlahir,tanggallahir,jeniskelamin,goldar,alamat,agama,perkawinan,kewarganegaraan;
+                NIK=$("#NIK").val();
+                namalengkap=$("#namalengkap").val();
+                tanggallahir=$("#tanggallahir").val();
+                jeniskelamin=$("#jeniskelamin").val();
+                goldar=$("#goldar").val();
+                alamat=$("#alamat").val();
+                agama=$("#agama").val();
+                perkawinan=$("#perkawinan").val();
+                kewarganegaraan=$("#kewarganegaraan").val();
+                nomor++;
+                $("#listdata").append("<tr><td>"+nomor+"</td><td>"+NIK+"</td><td>"+namalengkap+
+                  "</td><td>"+jeniskelamin+"</td></tr>"+goldar+"</td></tr>"+alamat+"</td></tr>"
+                  +agama+"</td></tr>"+perkawinan+"</td></tr>"+kewarganegaraan+"</td></tr>");
+                  
+                  alert("Data Berhasil disimpan");
+                });
+
+			$("#btn5").click(function(){
+				$("#form").show();
+				$("#formkelamin").hide();
+			});
+
+			$("#print").click(function(){
+				$("#form").hide();
+				window.print();
+			});
+
+			$("#simpan").click(function(){
+			var jeniskelamin;
+			jeniskelamin=$("#jeniskelamin").val();
+				$("#form").show();
+				$("#jeniskelamin").hide();
+				$("#jeniskelamin").append("<option value='"+jeniskelamin+"'>"+jeniskelamin+"</option>");
+			});
+      });
+
+
+    </script>
 </head>
 <body>
-    <!-- Nama   : Yusri Azra Lazwardi -->
-    <!-- NPM    : 432007006200083 -->
-    <!-- Kelas  : 2B -->
+    <h2 align="right">Form Input Kartu Tanda Penduduk Indonesia (KTP)</h2>
+    <div class="form" >
+      <table id="form"> 
+        <p align="center">Silakan Isi Dengan <b>BENAR</b></p>
+        <form>
+          <label for="NIK">NIK</label>
+          <input type="text" id="NIK btnhilang" name="NIK" placeholder="Masukan NIK anda">
+      
+          <label for="namalengkap">Nama Lengkap</label>
+          <input type="text" id="namalengkap" name="namalengkap" placeholder="Masukan Nama Lengkap Anda">
 
-    <h2 align="center">Form Input Kartu Tanda Penduduk Republik Indonesia (KTP) </h2>
-   <Form method="POST" action="aksi.php">
-        <table width="50%" align="center" border="1px" cellspacing="none" cellpadding="5px">
+          <label for="tempatlahir">Tempat Lahir</label>
+          <input type="text" id="tempatlahir" name="tempatlahir" placeholder="Masukan Kota Kelahiran anda">
+          
+          <label for="tanggallahir">Tanggal Lahir</label>
+          <br>
+          <input type="date" id="tanggallahir" name="tanggallahir">
+          <br>
+          <label for="jeniskelamin">Jenis Kelamin</label>
+          <br>
+          <input type="radio" id="jeniskelamin" name="jeniskelamin" value="Laki-Laki">Laki-Laki
+          <input type="radio" id="jeniskelamin" name="jeniskelamin" value="Perempuan">Perempuan
+          <br>
+          <label for="goldar">Golongan Darah</label>
+          <select id="goldar" name="goldar">
+              <option value="-">-- Pilih Golongan darah Anda --</option>
+            <option value="A">A</option>
+            <option value="AB">AB</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+          </select>
+
+          <label for="alamat">Alamat</label>
+          <textarea name="alamat" id="alamat" placeholder="Tulis alamat lengkap anda"></textarea>
+
+          <label for="Agama">Agama</label>
+          <select id="Agama" name="Agama">
+              <option value="-">-- Pilih Agama Anda --</option>
+            <option value="islam">Islam</option>
+            <option value="katolik">Katolik</option>
+            <option value="protestan">Protestan</option>
+            <option value="budha">Budha</option>
+            <option value="hindu">Hindu</option>
+            <option value="konghuchu">Konghuchu</option>
+          </select>
+          <br>
+          <label for="perkawinan">Status Perkawinan</label>
+          <br>
+          <input type="radio" id="perkawinan" name="perkawinan" value="kawin">Kawin
+          <input type="radio" id="perkawinan" name="perkawinan" value="Belum kawin">Belum Kawin
+          <br>
+          <br>
+          <label for="kewarganegaraan">Kewarganegaraan</label>
+          <br>
+          <input type="radio" id="kewarganegaraan" name="kewarganegaraan" value="wni">WNI
+          <input type="radio" id="kewarganegaraan" name="kewarganegaraan" value="wna">WNA
+          <br>
+        
+          <input type="submit" value="simpan" id="simpan">
+          <input type="reset" value="hapus">
+           <input type="submit" value="Clear" id="clear">
+           <input type="submit" value="Print" id="print">
+        </form>
+      </table>
+      </div>
+      <div>
+        <table class="listdata" id="listdata" align="center" width="700px" cellspacing="0px" cellpadding="0px" border="1px">
             <tr>
-                <td width="15%">Nik</td>
-                <td width="40%">:
-                    <input type="number" name="Nik" placeholder="Masukan Nik anda" autofocus required>
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Nama Lengkap</td>
-                <td width="40%">:
-                    <input type="text" name="nama" placeholder="Masukan Nama Lengkap" required>
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Tempat Lahir</td>
-                <td width="40%">:
-                    <input type="text" name="tempatlahir" placeholder="Masukan Kota Kelahiran">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Tanggal Lahir</td>
-                <td width="40%">:
-                    <input type="date" name="tanggallahir" required>
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Jenis Kelamin</td>
-                <td width="40%">: 
-                    Laki-Laki <input type="radio" name="jenis_kelamin" value="Laki-Laki">
-                    Perempuan <input type="radio" name="jenis_kelamin" value="Perempuan">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Golongan darah</td>
-                <td width="40%">:
-                    <select name="goldar" required>
-                        <option value=" ">-- Pilih Golongan darah anda --</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="AB">AB</option>
-                        <option value="O">O</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Alamat</td>
-                <td width="40%">:
-                    <textarea name="alamat" placeholder="Masukan alamat lengkap anda"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Agama</td>
-                <td width="40%">:
-                    <select name="goldar" required>
-                        <option value=" ">-- Pilih Agama anda --</option>
-                        <option value="Islam">Islam</option>
-                        <option value="Katolik">Katolik</option>
-                        <option value="Prostestan">Protestan</option>
-                        <option value="Budha">Budha</option>
-                        <option value="Hindu">Hindu</option>
-                        <option value="Konghuchu">Konghuchu</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Status Perkawinan</td>
-                <td width="40%">: 
-                    Kawin <input type="radio" name="perkawinan" value="kawin">
-                    Belum Kawin <input type="radio" name="perkawinan" value="belum kawin">
-                </td>
-            </tr>
-            <tr>
-                <td width="15%">Kewarganegaraan</td>
-                <td width="40%">: 
-                    WNI <input type="radio" name="Kewarganegaraan" value="WNI">
-                    WNA <input type="radio" name="Kewarganegaraan" value="WNA">
-                </td>
-            </tr>
-            <tr>
-               <td colspan="2" align="center"> 
-                   <input type="reset" name="reset" value="Reset">
-                   <input type="submit" name="simpan" value="Simpan">
-                </td>
+                <th>NO</th>
+                <th>NIK</th>
+                <th>Nama Lengkap</th>
+                <th>Tempat lahir</th>
+                <th>Tanggal lahir</th>
+                <th>Jenis Kelamin</th>
+                <th>Golongan Darah</th>
+                <th>Alamat</th>
+                <th>Agama</th>
+                <th>Status Perkawinan</th>
+                <th>Kewarganegaraan</th>
             </tr>
         </table>
-        <br> <br>
-        <table align="center" border="1px" cellspacing="none" cellpadding="5px">
-            <tr>
-                <td>NIK</td>
-                <td>Nama Lengkap</td>
-                <td>Tempat Lahir</td>
-                <td>Tanggal Lahir</td>
-                <td>Jenis Kelamin</td>
-                <td>Golongan darah</td>
-                <td>Alamat</td>
-                <td>Agama</td>
-                <td>Status Perkawinan</td>
-                <td>Kewarganegaraan</td>
-            </tr>
-        </table>
-   </Form>
+      </div>
 </body>
 </html>
