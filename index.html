@@ -1,135 +1,124 @@
+<!DOCTYPE html>
 <head>
-    <title>Jquery table</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        var nomor=0;
-
-        $("#form").hide();
-            $("#simpan").click(function(){
-                var NIK,namalengkap,tempatlahir,tanggallahir,jeniskelamin,goldar,alamat,agama,perkawinan,kewarganegaraan;
-                NIK=$("#NIK").val();
-                namalengkap=$("#namalengkap").val();
-                tanggallahir=$("#tanggallahir").val();
-                jeniskelamin=$("#jeniskelamin").val();
-                goldar=$("#goldar").val();
-                alamat=$("#alamat").val();
-                agama=$("#agama").val();
-                perkawinan=$("#perkawinan").val();
-                kewarganegaraan=$("#kewarganegaraan").val();
-                nomor++;
-                $("#listdata").append("<tr><td>"+nomor+"</td><td>"+NIK+"</td><td>"+namalengkap+
-                  "</td><td>"+jeniskelamin+"</td></tr>"+goldar+"</td></tr>"+alamat+"</td></tr>"
-                  +agama+"</td></tr>"+perkawinan+"</td></tr>"+kewarganegaraan+"</td></tr>");
-                  
-                  alert("Data Berhasil disimpan");
-                });
-
-			$("#btn5").click(function(){
-				$("#form").show();
-				$("#formkelamin").hide();
-			});
-
-			$("#print").click(function(){
-				$("#form").hide();
-				window.print();
-			});
-
-			$("#simpan").click(function(){
-			var jeniskelamin;
-			jeniskelamin=$("#jeniskelamin").val();
-				$("#form").show();
-				$("#jeniskelamin").hide();
-				$("#jeniskelamin").append("<option value='"+jeniskelamin+"'>"+jeniskelamin+"</option>");
-			});
-      });
-
-
-    </script>
+  <title>Jquerry Part 2 Form KTP | Yusri Azra Lazwardi</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript"></script>
 </head>
 <body>
-    <h2 align="right">Form Input Kartu Tanda Penduduk Indonesia (KTP)</h2>
-    <div class="form" >
-      <table id="form"> 
-        <p align="center">Silakan Isi Dengan <b>BENAR</b></p>
-        <section>
-          <label for="NIK">NIK</label>
-          <input type="text" id="NIK btnhilang" name="NIK" placeholder="Masukan NIK anda">
-      
-          <label for="namalengkap">Nama Lengkap</label>
-          <input type="text" id="namalengkap" name="namalengkap" placeholder="Masukan Nama Lengkap Anda">
+  <div id="form">
+        <div class="card">
+            <h2>FORM INPUT DATA KTP</h2>
+            <p>Silahkan isi form dibawah ini dengan benar !</p>
+                <label for="NIK">NIK</label>
+                <input type="text" id="NIK" name="NIK" placeholder="Masukan NIK" required autofocus>
+                <br><br>
+                  
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="namalengkap" name="nama_lengkap" placeholder="Masukan nama lengkap" required>
+                <br><br>
 
-          <label for="tempatlahir">Tempat Lahir</label>
-          <input type="text" id="tempatlahir" name="tempatlahir" placeholder="Masukan Kota Kelahiran anda">
-          
-          <label for="tanggallahir">Tanggal Lahir</label>
-          <br>
-          <input type="date" id="tanggallahir" name="tanggallahir">
-          <br>
-          <label for="jeniskelamin">Jenis Kelamin</label>
-          <br>
-          <input type="radio" id="jeniskelamin" name="jeniskelamin" value="Laki-Laki">Laki-Laki
-          <input type="radio" id="jeniskelamin" name="jeniskelamin" value="Perempuan">Perempuan
-          <br>
-          <label for="goldar">Golongan Darah</label>
-          <select id="goldar" name="goldar">
-              <option value="-">-- Pilih Golongan darah Anda --</option>
-            <option value="A">A</option>
-            <option value="AB">AB</option>
-            <option value="B">B</option>
-            <option value="O">O</option>
-          </select>
+                <label for="tempat">Tempat Lahir</label>
+                <input type="text" id="tempat" name="tempat_lahir" placeholder="Masukan tempat lahir" required>
+                <br><br>
 
-          <label for="alamat">Alamat</label>
-          <textarea name="alamat" id="alamat" placeholder="Tulis alamat lengkap anda"></textarea>
+                <label for="tanggal">Tanggal Lahir</label>
+                <input type="date" id="tanggal" name="tgl_lahir" placeholder="Masukan tanggal lahir" required>
+                <br><br>
 
-          <label for="Agama">Agama</label>
-          <select id="Agama" name="Agama">
-              <option value="-">-- Pilih Agama Anda --</option>
-            <option value="islam">Islam</option>
-            <option value="katolik">Katolik</option>
-            <option value="protestan">Protestan</option>
-            <option value="budha">Budha</option>
-            <option value="hindu">Hindu</option>
-            <option value="konghuchu">Konghuchu</option>
-          </select>
-          <br>
-          <label for="perkawinan">Status Perkawinan</label>
-          <br>
-          <input type="radio" id="perkawinan" name="perkawinan" value="kawin">Kawin
-          <input type="radio" id="perkawinan" name="perkawinan" value="Belum kawin">Belum Kawin
-          <br>
-          <br>
-          <label for="kewarganegaraan">Kewarganegaraan</label>
-          <br>
-          <input type="radio" id="kewarganegaraan" name="kewarganegaraan" value="wni">WNI
-          <input type="radio" id="kewarganegaraan" name="kewarganegaraan" value="wna">WNA
-          <br>
-        
-          <input type="submit" value="simpan" id="simpan">
-          <input type="reset" value="hapus">
-           <input type="submit" value="Clear" id="clear">
-           <input type="submit" value="Print" id="print">
-        </section>
-      </table>
-      </div>
-      <div>
-        <table class="listdata" id="listdata" align="center" width="700px" cellspacing="0px" cellpadding="0px" border="1px">
-            <tr>
-                <th>NO</th>
-                <th>NIK</th>
-                <th>Nama Lengkap</th>
-                <th>Tempat lahir</th>
-                <th>Tanggal lahir</th>
-                <th>Jenis Kelamin</th>
-                <th>Golongan Darah</th>
-                <th>Alamat</th>
-                <th>Agama</th>
-                <th>Status Perkawinan</th>
-                <th>Kewarganegaraan</th>
-            </tr>
-        </table>
-      </div>
+                <label for="jeniskelamin">Jenis Kelamin</label><br>
+                <div class="check">
+                    <input type="radio" id="jeniskelamin" name="jeniskel" value="Laki-laki"> Laki-laki <br><br>
+                    <input type="radio" id="jeniskelamin" name="jeniskel" value="Perempuan"> Perempuan  
+                </div>
+                <br><br>               
+                  
+                <label for="goldar">Golongan Darah</label>
+                <select id="goldar" name="gol_darah" required>
+                    <option value=" ">-- Pilih Golongan Darah --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="O">O</option>
+                </select>
+                <br><br>
+
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" name="alamat" placeholder="Masukan alamat lengkap" required></textarea>
+                <br><br>
+
+                <label for="agama">Agama</label>
+                <select id="agama" name="agama" required>
+                    <option value="">-- Pilih Agama --</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>  
+                    <option value="Hindu">Hindu</option>                    
+                    <option value="Budha">Budha</option>
+                </select>
+                <br>
+                <div class="center"><button id="tambah" class="button1">( + )</button></div>
+                <br>
+
+                <label for="perkawinan">Status Perkawinan</label><br>
+                <div class="check">
+                    <input type="radio" id="perkawinan" name="status_perkawinan" value="Kawin"> Kawin <br><br>
+                    <input type="radio" id="perkawinan" name="status_perkawinan" value="Belum Kawin"> Belum Kawin
+                </div>
+                <br><br>
+
+                <label for="Warganegara">Kewarganegaraan</label><br>
+                <div class="check">
+                    <input type="radio" id="Warganegara" name="kewarganegaraan" value="WNA"> WNA <br><br>
+                    <input type="radio" id="Warganegara" name="kewarganegaraan" value="WNI"> WNI
+                </div>
+                <br><br>
+                <div class="center">
+                  <button id="baru" onclick="uncheck()">BARU</button>
+                  <button id="simpan">SIMPAN</button>   
+                </div>    
+        </div>
+        <div class="card1">
+          <h2>FORM DATA KARTU TANDA PENDUDUK (KTP)</h2>
+          <table align="center" cellspacing="0px" cellpadding="0px" border="1px">
+              <thead>
+                  <tr>
+                      <th>NO</th>
+                      <th id="">NIK</th>
+                      <th>Nama Lengkap</th>
+                      <th>Tempat Lahir</th>
+                      <th>Tanggal Lahir</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Golongan Darah</th>
+                      <th>Alamat</th>
+                      <th>Agama</th>
+                      <th>Status Perkawinan</th>
+                      <th>Kewarganegaraan</th>
+                  </tr>   
+              </thead> 
+              <tbody id="listdata">
+                  <tr></tr>
+              </tbody>
+          </table>
+              
+          <div class="center">
+              <button id="kosong" class="button2">Kosongkan Data</button>
+              <button id="print" class="button2">Print Data</button>
+          </div>
+      </div> 
+  </div>
+    <div id="formagama">
+        <div class="card">
+            <h2>FORM INPUT AGAMA</h2>
+            <p>Silakan isi Agama kamu !</p>
+                      
+            <label for="inputagama">Tambah Agama</label>
+            <input type="text" id="inputagama" name="agm" placeholder="Masukan Agama" required autofocus>
+            <br><br>
+                      
+            <div class="center">
+                <button id="back">KEMBALI</button> 
+                <button id="svagama">SIMPAN</button>
+            </div>                     
+        </div>
+    </div>    
 </body>
 </html>
